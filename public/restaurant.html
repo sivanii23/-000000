@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-10">
+
+<h1 class="text-2xl mb-4">Add Surplus Food</h1>
+
+<input id="name" placeholder="Food Name" class="border p-2 m-2">
+<input id="restaurant" placeholder="Restaurant Name" class="border p-2 m-2">
+<input id="discount" placeholder="Discount %" class="border p-2 m-2">
+
+<button onclick="addFood()" class="bg-green-500 text-white px-4 py-2">
+  Submit
+</button>
+
+<script>
+async function addFood() {
+  await fetch("/addFood", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      restaurant: document.getElementById("restaurant").value,
+      discount: document.getElementById("discount").value
+    })
+  });
+
+  alert("Food Added!");
+}
+
+/* Reminder Notification */
+setInterval(() => {
+  alert("Reminder: Update your surplus food for today!");
+}, 3600000); // every hour
+</script>
+
+</body>
+</html>

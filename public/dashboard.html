@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Impact Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-10">
+
+<h1 class="text-2xl mb-6">Impact Dashboard</h1>
+
+<div id="stats" class="text-xl"></div>
+
+<script>
+async function loadStats() {
+  const res = await fetch("/stats");
+  const data = await res.json();
+
+  document.getElementById("stats").innerHTML = `
+    Total Food Listings: ${data.totalFoodListings} <br>
+    Total Volunteers: ${data.totalVolunteers}
+  `;
+}
+
+loadStats();
+</script>
+
+</body>
+</html>
