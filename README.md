@@ -86,13 +86,32 @@ List the key features of your project:
 ![Screenshot1]<p align="center">
   <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20091931.png" alt="Project Banner" width="100%">
 </p>
-*Add caption explaining what this shows*
+*This screenshot shows the index page*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2]<p align="center">
+  <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20091946.png" alt="Project Banner" width="100%">
+</p>
+*This screenshot shows the impact dashboard that showcase our works*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3]<p align="center">
+  <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20092000.png" alt="Project Banner" width="100%">
+</p>
+*this screenshot shows our the restaurants that has been linked to our website for food donations and discounts*
+
+![Screenshot4]<p align="center">
+  <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20092038.png" alt="Project Banner" width="100%">
+</p>
+*This screenshot shows the volunteer registration page for delivery services*
+
+![Screenshot5]<p align="center">
+  <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20092050.png" alt="Project Banner" width="100%">
+</p>
+*you may click on the "I'm Ready" button to complete your registration*
+
+![Screenshot6]<p align="center">
+  <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20092105.png" alt="Project Banner" width="100%">
+</p>
+*this screenshot shows the login/sign up page for users*
 
 #### Diagrams
 
