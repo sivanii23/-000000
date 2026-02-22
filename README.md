@@ -83,7 +83,9 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot1]<p align="center">
+  <img src="https://github.com/sivanii23/-000000/blob/main/Screenshot%202026-02-22%20091931.png" alt="Project Banner" width="100%">
+</p>
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
