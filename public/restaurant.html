@@ -1,42 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Restaurant Panel</title>
+  <title>Restaurants</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="p-10">
+<body class="bg-gray-50 min-h-screen">
 
-<h1 class="text-2xl mb-4">Add Surplus Food</h1>
+  <!-- Home button (top-left) -->
+  <a href="index.html" class="fixed top-4 left-4 z-50 bg-yellow-300 text-black px-4 py-2 rounded-full border-2 border-black shadow-md hover:bg-yellow-700 hover:border-yellow-800 transition" aria-label="Home">Home</a>
 
-<input id="name" placeholder="Food Name" class="border p-2 m-2">
-<input id="restaurant" placeholder="Restaurant Name" class="border p-2 m-2">
-<input id="discount" placeholder="Discount %" class="border p-2 m-2">
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-semibold">Restaurants</h1>
+      <div class="flex gap-3">
+        <button class="px-3 py-2 bg-white border rounded shadow-sm">Filters</button>
+        <div class="relative">
+          <select class="px-3 py-2 border rounded bg-white">
+            <option>All Cuisines</option>
+            <option>Pizza</option>
+            <option>Fast Food</option>
+            <option>Bakery</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
-<button onclick="addFood()" class="bg-green-500 text-white px-4 py-2">
-  Submit
-</button>
+    <div id="restaurantsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Restaurant cards injected here -->
+    </div>
+  </div>
 
-<script>
-async function addFood() {
-  await fetch("/addFood", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      restaurant: document.getElementById("restaurant").value,
-      discount: document.getElementById("discount").value
-    })
-  });
+  <script>
+  // Try to fetch restaurants from server; fall back to demo data
+  async function loadRestaurants(){
+    let list = [];
+    try{
+      const res = await fetch('/restaurants');
+      if(res.ok) list = await res.json();
+    }catch(e){ /* ignore */ }
 
-  alert("Food Added!");
-}
+    if(!list || list.length === 0){
+      list = [
+        { id:1, name:'Hotel Green Chillies', cuisine:'South Indian, Kerala, Biryani', price:'₹150 for one', eta:'14 min', img:'https://www.keellsfoods.lk/images/site-specific/recipes/mutton-biriyani/slider/mutton-biriyani__570x380.jpg', off:'₹101 OFF', rating:3.9 },
+        { id:2, name:'NB Roosters Fried Chicken', cuisine:'Fast Food, Burger', price:'₹200 for one', eta:'23 min', img:'https://www.licious.in/blog/wp-content/uploads/2020/12/Pan-Fried-Chicken.jpg', off:'30% OFF', rating:4.2 },
+        { id:3, name:'Olio - The Wood Fired Pizzeria', cuisine:'Pizza, Fast Food', price:'₹200 for one', eta:'20 min', img:'https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU=', off:'30% OFF', rating:4.0 },
+        { id:4, name:'ARABIC LIVE KITCHEN', cuisine:'Shawarma, Ice Cream', price:'₹150 for one', eta:'18 min', img:'https://content.jdmagicbox.com/comp/ernakulam/e6/0484px484.x484.230226213542.k7e6/catalogue/yaman-mandhi-pallikkara-ernakulam-restaurants-2lwxz3th1f.jpg', off:'₹101 OFF', rating:3.7 },
+        { id:5, name:'WarmOven Cake & Desserts', cuisine:'Bakery, Desserts', price:'₹150 for one', eta:'25 min', img:'https://www.marthastewart.com/thmb/oJD04Vu-HeiiQSUGB9iZzcuB1yw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSL-313610-Strawberry-Cream-Cake-Recipe-hero-3x2_8358-06a047fd7dcd482e8fe0c8446983c81c.jpeg', off:'30% OFF', rating:4.1 },
+        { id:6, name:"Crusto's - Cheese Burst Pizza", cuisine:'Pizza', price:'₹200 for one', eta:'22 min', img:'https://cdn.jwplayer.com/v2/media/1znN8BBx/thumbnails/WmRQ08C1.jpg', off:'30% OFF', rating:4.0 }
+      ];
+    }
 
-/* Reminder Notification */
-setInterval(() => {
-  alert("Reminder: Update your surplus food for today!");
-}, 3600000); // every hour
-</script>
+    const container = document.getElementById('restaurantsGrid');
+    container.innerHTML = '';
+    list.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-lg shadow overflow-hidden';
+      card.innerHTML = `
+        <div class="relative">
+          <img src="${r.img}" alt="${r.name}" class="w-full h-44 object-cover">
+          <div class="absolute left-3 top-3 bg-blue-600 text-white text-xs px-2 py-1 rounded">${r.off}</div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="text-lg font-semibold">${r.name}</h3>
+              <p class="text-sm text-gray-500 truncate w-64">${r.cuisine}</p>
+            </div>
+            <div class="text-right">
+              <div class="inline-block bg-green-600 text-white text-sm px-2 py-1 rounded">${r.rating}★</div>
+              <div class="text-sm text-gray-500 mt-2">${r.price}</div>
+              <div class="text-sm text-gray-400">${r.eta}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  loadRestaurants();
+  </script>
 
 </body>
 </html>

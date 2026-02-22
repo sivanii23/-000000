@@ -5,24 +5,54 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="p-10">
+<body class="bg-gray-100 min-h-screen p-10 flex items-center justify-center">
 
-<h1 class="text-2xl mb-6">Impact Dashboard</h1>
+  <!-- Home button (top-left) -->
+  <a href="index.html" class="fixed top-4 left-4 z-50 bg-yellow-300 text-black px-4 py-2 rounded-full border-2 border-black shadow-md hover:bg-yellow-700 hover:border-yellow-800 transition" aria-label="Home">Home</a>
 
-<div id="stats" class="text-xl"></div>
+<div class="w-full max-w-md text-center">
+  <h1 class="text-3xl font-bold mb-8 text-center text-green-600">
+    📈 Impact Dashboard
+  </h1>
+
+  <div class="grid grid-cols-1 gap-6">
+
+  <!-- Food Saved -->
+  <div class="bg-white p-6 rounded-2xl shadow-lg text-center mx-auto w-full max-w-xl">
+    <h2 class="text-xl font-semibold mb-2">🍱 Food Saved</h2>
+    <p id="foodSaved" class="text-3xl font-bold text-green-600"></p>
+    <p class="text-gray-500">Kilograms of food rescued</p>
+  </div>
+
+  <!-- Meals Distributed -->
+  <div class="bg-white p-6 rounded-2xl shadow-lg text-center mx-auto w-full max-w-xl">
+    <h2 class="text-xl font-semibold mb-2">🥗 Meals Distributed</h2>
+    <p id="meals" class="text-3xl font-bold text-blue-600"></p>
+    <p class="text-gray-500">Meals delivered to people</p>
+  </div>
+
+  <!-- Waste Reduced -->
+  <div class="bg-white p-6 rounded-2xl shadow-lg text-center mx-auto w-full max-w-xl">
+    <h2 class="text-xl font-semibold mb-2">♻️ Waste Reduced</h2>
+    <p id="waste" class="text-3xl font-bold text-purple-600"></p>
+    <p class="text-gray-500">Reduction in food waste</p>
+  </div>
+
+  </div>
+</div>
 
 <script>
-async function loadStats() {
-  const res = await fetch("/stats");
-  const data = await res.json();
+/* Dummy Data */
+const stats = {
+  foodSaved: 245,      // kg
+  meals: 520,          // meals
+  wasteReduced: 38     // percent
+};
 
-  document.getElementById("stats").innerHTML = `
-    Total Food Listings: ${data.totalFoodListings} <br>
-    Total Volunteers: ${data.totalVolunteers}
-  `;
-}
-
-loadStats();
+/* Load Data */
+document.getElementById("foodSaved").innerText = stats.foodSaved + " kg";
+document.getElementById("meals").innerText = stats.meals;
+document.getElementById("waste").innerText = stats.wasteReduced + "%";
 </script>
 
 </body>

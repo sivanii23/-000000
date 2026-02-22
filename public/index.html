@@ -7,59 +7,206 @@
 
 <body class="bg-gray-100 min-h-screen">
 
-<div class="p-6 bg-green-600 text-white text-center text-2xl">
-  🍱 Food Rescue Deals Near You
-</div>
 
-<nav class="p-4 bg-white shadow flex gap-4 justify-center">
-  <a href="index.html" class="px-4 py-2 rounded bg-green-100">Home</a>
-  <a href="dashboard.html" class="px-4 py-2 rounded">Dashboard</a>
-  <a href="restaurant.html" class="px-4 py-2 rounded">Restaurant</a>
-  <a href="volunteer.html" class="px-4 py-2 rounded">Volunteer</a>
-</nav>
 
-<main class="p-6">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Food Connector — Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-  <!-- Home / Listings -->
-  <section id="home">
-    <div id="foodList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+<body class="bg-[url('https://www.transparenttextures.com/patterns/white-paper.png')] bg-white min-h-screen text-gray-800">
 
-    <!-- Ads Section -->
-    <div class="p-6 bg-yellow-200 text-center mt-6">
-      Advertisement Space (Revenue Source)
+  <!-- Top bar (email + social icons) -->
+  <div class="bg-green-400 text-black">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+      <div class="text-sm">
+        <a href="mailto:marketing@thefoodconnector.com" class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4"/></svg>
+          marketing@thefoodconnector.com
+        </a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" aria-label="facebook">FB</a>
+        <a href="#" aria-label="linkedin">IN</a>
+        <a href="#" aria-label="youtube">YT</a>
+        <a href="#" aria-label="instagram">IG</a>
+      </div>
     </div>
+  </div>
+
+  <!-- Header with logo + nav -->
+  <header class="bg-green-300">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-3xl font-extrabold tracking-tight">
+          <span class="text-black">the</span><span class="text-black">food</span><span class="text-white bg-black rounded px-1 ml-1">connector</span>
+        </div>
+      </div>
+
+      <nav class="space-x-28 hidden md:flex">
+        <a href="index.html" class="text-lg font-medium">Home</a>
+        <a href="dashboard.html" class="text-lg font-medium">Dashboard</a>
+        <a href="restaurant.html" class="text-lg font-medium">Restaurant</a>
+        <a href="volunteer.html" class="text-lg font-medium">Volunteer</a>
+      </nav>
+      <div class="hidden md:flex items-center">
+        <button id="loginBtn" onclick="openLoginModal()" class="ml-4 px-6 py-3 rounded-full text-base font-medium bg-yellow-300 text-black border-2 border-black hover:border-yellow-800 hover:shadow-md transition-colors">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="max-w-7xl mx-auto px-6 py-20">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+      <!-- Left: big heading + copy + CTA -->
+      <div class="lg:col-span-7">
+        <h1 class="text-6xl leading-tight font-extrabold mb-6">An initiative to prevent food waste </h1>
+        <p class="text-lg text-gray-700 mb-8">by turning unsold restaurant meals into affordable food for users and donations for communities in need.</p>
+
+        <a href="dashboard.html" class="inline-block bg-yellow-400 text-black px-8 py-4 font-semibold shadow-md">SEE OUR WORK</a>
+      </div>
+
+      <!-- Right: image collage -->
+      <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+        <img src="https://themarketingbirds.com/wp-content/uploads/2018/09/coka.jpg" class="w-full h-40 object-cover rounded shadow" alt="work 1">
+        <img src="https://i.pinimg.com/originals/b4/1f/fe/b41ffe95971f2f44835d524ac7f8827c.png" class="w-full h-40 object-cover rounded shadow" alt="work 2">
+        <img src="https://licindia.in/documents/d/guest/mahila-career-agent-1920-x-500" class="w-full h-40 object-cover rounded shadow col-span-2" alt="work 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTczVjhYmn7Utt-56MbzOfiMkQeY4Zg3l0kKg&s" class="w-full h-40 object-cover rounded shadow" alt="work 4">
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Small listings area (kept from earlier) -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <div id="foodList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- Other pages are separate files: dashboard.html, restaurant.html, volunteer.html -->
+  <!-- Large Airbnb-style Login Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl w-full max-w-2xl mx-4 max-h-[90vh] overflow-hidden shadow-lg">
+      <div class="flex items-center justify-between p-4 border-b">
+        <button onclick="closeLoginModal()" aria-label="Close" class="text-2xl px-3">✕</button>
+        <h3 class="text-lg font-medium">Log in or sign up</h3>
+        <div class="w-10"></div>
+      </div>
 
-</main>
+      <div class="overflow-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Left: phone entry -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-4">Welcome back</h2>
 
-<script>
-/* Home: load food listings */
-async function loadFoods() {
-  try {
-    const res = await fetch('/foods');
-    const foods = await res.json();
-    const container = document.getElementById('foodList');
-    container.innerHTML = '';
-    foods.forEach(food => {
-      container.innerHTML += `
-        <div class="bg-white p-4 rounded shadow">
-          <h2 class="text-xl font-bold">${food.name}</h2>
-          <p>${food.restaurant}</p>
-          <p>Discount: ${food.discount}%</p>
-          <button class="bg-green-500 text-white px-4 py-2 mt-2 rounded">Redeem Coupon</button>
+            <form id="phoneForm" onsubmit="handlePhoneSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-sm text-gray-600 mb-1">Country/Region</label>
+                <select id="country" class="w-full border rounded p-3">
+                  <option value="+91">India (+91)</option>
+                  <option value="+1">United States (+1)</option>
+                  <option value="+44">United Kingdom (+44)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm text-gray-600 mb-1">Phone number</label>
+                <input id="phone_number" type="tel" required placeholder="Phone number" class="w-full border rounded p-3" />
+              </div>
+
+              <p class="text-xs text-gray-500">We'll call or text you to confirm your number. Standard message and data rates may apply. <a href="#" class="underline">Privacy Policy</a></p>
+
+              <button type="submit" class="w-full mt-2 py-3 bg-gradient-to-r from-green-500 to--500 text-white font-semibold rounded">Continue</button>
+            </form>
+          </div>
+
+          <!-- Right: alternative login methods -->
+          <div>
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-px bg-gray-200"></div>
+              <div class="px-3 text-sm text-gray-500">or</div>
+              <div class="flex-1 h-px bg-gray-200"></div>
+            </div>
+
+            <div class="space-y-3">
+              <button onclick="oauth('google')" class="w-full border rounded py-3 flex items-center justify-center gap-3">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" class="h-5 w-5" />
+                Continue with Google
+              </button>
+
+              <button onclick="oauth('apple')" class="w-full border rounded py-3 flex items-center justify-center gap-3">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.02-.39 2.02-1.06 2.79-.73.84-1.8 1.5-2.75 1.5.02-1.06.42-2.2 1.18-2.92C14.56 1.77 15.45 1.43 16.37 1.43zM12.9 4.88c-2.62 0-4.7 2.15-4.7 4.8 0 2.68 1.88 4.97 4.7 4.97 2.81 0 4.7-2.35 4.7-4.97 0-2.6-2.02-4.8-4.7-4.8z"/></svg>
+                Continue with Apple
+              </button>
+
+              <button onclick="continueWithEmail()" class="w-full border rounded py-3 flex items-center justify-center gap-3">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 8l7 5 7-5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Continue with email
+              </button>
+            </div>
+          </div>
         </div>
-      `;
-    });
-  } catch (e) {
-    console.error('Failed to load foods', e);
-  }
-}
-// Initial view
-loadFoods();
+      </div>
+    </div>
+  </div>
 
-</script>
+  <script>
+  function openLoginModal(){ document.getElementById('loginModal').classList.remove('hidden'); }
+  function closeLoginModal(){ document.getElementById('loginModal').classList.add('hidden'); }
+
+  async function handlePhoneSubmit(e){
+    e.preventDefault();
+    const country = document.getElementById('country').value;
+    const phone = document.getElementById('phone_number').value;
+    // send phone to server for verification (placeholder)
+    try{
+      const res = await fetch('/login-phone', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ country, phone })
+      });
+      if(res.ok){ alert('Check your phone for verification code'); closeLoginModal(); }
+      else { alert('Failed to start phone login'); }
+    }catch(err){ console.error(err); alert('Network error'); }
+  }
+
+  function oauth(provider){
+    // placeholder: redirect to oauth
+    alert('Continue with ' + provider);
+  }
+
+  function continueWithEmail(){
+    // simple fallback: show email/password form
+    const email = prompt('Enter email');
+    if(!email) return;
+    alert('Email flow not implemented in demo. You entered: ' + email);
+    closeLoginModal();
+  }
+  /* Home: load food listings (kept) */
+  async function loadFoods() {
+    try {
+      const res = await fetch('/foods');
+      const foods = await res.json();
+      const container = document.getElementById('foodList');
+      container.innerHTML = '';
+      foods.forEach(food => {
+        container.innerHTML += `
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-bold">${food.name}</h2>
+            <p class="text-sm text-gray-600">${food.restaurant}</p>
+            <p class="mt-2 font-semibold">Discount: ${food.discount}%</p>
+            <button class="bg-green-500 text-white px-4 py-2 mt-3 rounded">Redeem Coupon</button>
+          </div>
+        `;
+      });
+    } catch (e) {
+      console.error('Failed to load foods', e);
+    }
+  }
+
+  loadFoods();
+  </script>
 
 </body>
 </html>
