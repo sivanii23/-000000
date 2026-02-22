@@ -13,7 +13,7 @@
 - Member 2: [Ria Reji] - [TocH institute of science and technology,Arakunnam]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[replate-eosin.vercel.app
 
 ### Project Description
 [This project is a web-based platform designed to reduce food waste by connecting restaurants with nearby customers, NGOs, and volunteers to redistribute surplus food efficiently. Restaurants can offer time-based discounts on excess meals or donate them, while volunteers help deliver food to those in need. The system promotes sustainability, affordability, and social impact through smart food redistribution.]
@@ -215,38 +215,10 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 
 ---
 
-### For Hardware Projects:
 
 
 #### Assembly Instructions
 
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
 
 ---
 
@@ -349,10 +321,16 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[https://drive.google.com/file/d/1l79eWjyboawAhmHa2kkFb1gOQALb7y0N/view?usp=sharing]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+explanation
+The video demonstrates a food redistribution web platform that connects restaurants with surplus food to NGOs through registered volunteers. It showcases user authentication, volunteer registration, navigation between modules, and ad-based monetization, highlighting a scalable solution to reduce food waste and improve food accessibility.
 
+Frontend:
+HTML pages with Tailwind CSS styling.
+Responsive layout with cards, forms, and modal components.
+JavaScript for navigation and login modal handling.
+The backend was supposed to be Node.js + Express server and Firebase Firestore database
 ### Additional Demos
 [Add any extra demo materials/links - Live site, APK download, online demo, etc.]
 
@@ -362,17 +340,15 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** [GitHub Copilot,ChatGPT]
 
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+**Purpose:** [Frontend modifications]
+
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+- "here the dashboard index restarant and volunteer pages are separately created i want all of them to be integgrated in home page"
+- "put foodsaved, meals,wasteReduced in centre of the page"
+- "add home button at top corner in restaurants yellow 300"
 
 **Percentage of AI-generated code:** [Approximately X%]
 
@@ -388,8 +364,8 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Sivani S]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Ria Reji]: [Specific contributions - e.g., Backend development, Database design, etc.]
+- [Sivani S]: [Frontend development-index.html,dashboard.hmtl]
+- [Ria Reji]: [Frontend development-restaurant.html,volunteer.html]
 
 
 ---
