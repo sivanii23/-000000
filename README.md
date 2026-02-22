@@ -2,27 +2,27 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [REPLATE] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [#000000]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Sivani S] - [TocH institute of science and technology,Arakunnam]
+- Member 2: [Ria Reji] - [TocH institute of science and technology,Arakunnam]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[This project is a web-based platform designed to reduce food waste by connecting restaurants with nearby customers, NGOs, and volunteers to redistribute surplus food efficiently. Restaurants can offer time-based discounts on excess meals or donate them, while volunteers help deliver food to those in need. The system promotes sustainability, affordability, and social impact through smart food redistribution.]
 
 ### The Problem statement
-[What problem are you solving?]
+[This project solves the problem of food waste from restaurants and hotels, where large amounts of unsold but edible food are often thrown away at the end of the day. At the same time, many people struggle to access affordable meals and NGOs face shortages in food donations.]
 
 ### The Solution
-[How are you solving it?]
+[This project solves the problem by redistributing surplus food from restaurants instead of letting it go to waste. Restaurants can offer unsold food to nearby customers at discounted prices, which users can collect directly from the restaurant, while excess food can also be donated to NGOs with the help of registered volunteers who handle delivery. Automated reminders help restaurants update available food, and an impact dashboard tracks food saved and meals distributed, making the system efficient and sustainable.]
 
 ---
 
@@ -31,10 +31,10 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
+- Languages used: [NodeJS,HTML,            ]
 - Frameworks used: [e.g., React, Django, Spring Boot]
 - Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Tools used: [e.g., VS Code, Git,Chatgpt]
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +46,10 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Remainder to Restaurant]
+- Feature 2: [volunteers for pickup and delivery]
+- Feature 3: [discount for users during selected hours]
+- Feature 4: [Location-Based Food Deals]
 
 ---
 
@@ -400,9 +400,9 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [Sivani S]: [Specific contributions - e.g., Frontend development, API integration, etc.]
+- [Ria Reji]: [Specific contributions - e.g., Backend development, Database design, etc.]
+
 
 ---
 
